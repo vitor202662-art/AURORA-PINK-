@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurora Pink - Rejuvenate Your Skin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Aurora Pink - Rejuvenesça sua Pele</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <style>
         /* --- RESET & VARIABLES --- */
         :root {
@@ -18,7 +15,7 @@
             --text-dark: #333333;
             --text-gray: #666666;
             --shadow: 0 10px 30px rgba(255, 143, 163, 0.2);
-            --radius: 20px;
+            --radius: 16px;
         }
 
         * {
@@ -32,392 +29,463 @@
             background-color: var(--light-pink);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        a { text-decoration: none; }
+        ul { list-style: none; }
 
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* --- HEADER --- */
-        header {
+        /* --- UTILITIES --- */
+        .text-center { text-align: center; }
+        .highlight { color: var(--dark-pink); font-weight: 700; }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--dark-pink), var(--primary-pink));
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(201, 24, 74, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
             text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(180deg, #fff 0%, var(--light-pink) 100%);
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
 
-        h1 {
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(201, 24, 74, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--dark-pink);
+            color: var(--dark-pink);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--dark-pink);
+            color: white;
+        }
+
+        /* --- TOP BANNERS --- */
+        .top-alert {
+            background-color: var(--dark-pink);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .social-proof {
+            background-color: #fff;
+            color: var(--dark-pink);
+            text-align: center;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        header h1 {
             font-size: 2.5rem;
             color: var(--dark-pink);
             margin-bottom: 10px;
-            font-weight: 700;
             letter-spacing: -1px;
         }
 
-        .subtitle {
+        header p {
             font-size: 1.1rem;
             color: var(--text-gray);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* --- HERO IMAGE --- */
-        .hero-image {
-            margin: 30px auto;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 4px solid var(--white);
-            transition: transform 0.3s ease;
+        /* --- HERO SECTION --- */
+        .hero {
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .hero-image:hover {
-            transform: scale(1.02);
+        .hero-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            object-fit: cover;
         }
 
         /* --- BENEFITS --- */
         .benefits {
-            padding: 40px 0;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-pink);
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
-        .benefit-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: var(--radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
         }
 
         .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: block;
+            font-size: 1.5rem;
         }
 
-        .benefit-title {
-            font-weight: 600;
+        /* --- ABOUT & SECOND IMAGE --- */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
             color: var(--dark-pink);
+            margin-bottom: 15px;
         }
 
-        /* --- ABOUT --- */
-        .about {
-            background: var(--white);
-            padding: 50px 20px;
-            margin: 30px 0;
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .about p {
-            font-size: 1.05rem;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .product-detail-img {
-            margin: 30px auto;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 4px solid var(--white);
         }
 
         /* --- PROMOTION --- */
         .promotion {
-            background: linear-gradient(135deg, var(--dark-pink), var(--primary-pink));
-            color: var(--white);
-            text-align: center;
-            padding: 30px 20px;
-            margin: 40px 0;
+            background: linear-gradient(135deg, #fff0f3 0%, #ffe4e9 100%);
+            border: 2px dashed var(--primary-pink);
+            padding: 30px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 20px rgba(201, 24, 74, 0.3);
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         .promotion h3 {
+            color: var(--dark-pink);
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .promo-details {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        /* --- PRICING BUTTONS --- */
-        .pricing-section {
-            padding: 20px 0 60px;
-        }
-
-        .btn-container {
+        /* --- PRICING --- */
+        .pricing {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .btn {
-            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            padding: 18px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .price-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: center;
             position: relative;
-            overflow: hidden;
+            border: 1px solid #eee;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        .price-card.featured {
+            border: 2px solid var(--dark-pink);
+            transform: scale(1.05);
+            z-index: 2;
         }
 
-        .btn-1 {
-            background-color: var(--white);
-            color: var(--dark-pink);
-            border: 2px solid var(--primary-pink);
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
-        .btn-2 {
-            background-color: var(--white);
-            color: var(--dark-pink);
-            border: 2px solid var(--primary-pink);
-        }
-
-        .btn-3 {
-            background: linear-gradient(90deg, var(--dark-pink), var(--primary-pink));
-            color: var(--white);
-            border: none;
+        .price-card h3 {
             font-size: 1.2rem;
-            transform: scale(1.02);
+            margin-bottom: 10px;
         }
 
-        .btn-3::after {
-            content: '🔥';
-            margin-left: 10px;
+        .price {
+            font-size: 2rem;
+            color: var(--dark-pink);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-weight: 400;
         }
 
         /* --- REVIEWS --- */
         .reviews {
-            padding: 40px 20px;
-            background: var(--white);
-            border-radius: var(--radius);
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
-
+        
         .reviews h2 {
             text-align: center;
-            color: var(--dark-pink);
             margin-bottom: 30px;
+            color: var(--dark-pink);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .review-card {
-            background: var(--light-pink);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--dark-pink);
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .stars {
-            color: #FFD700;
-            margin-bottom: 10px;
-            display: block;
+        .stars { color: #ffc107; margin-bottom: 10px; }
+        .review-text { font-style: italic; color: var(--text-gray); }
+
+        /* --- FORM --- */
+        .comment-section {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto 60px;
         }
 
-        .review-text {
-            font-style: italic;
-            color: var(--text-dark);
-        }
-
-        /* --- WHATSAPP --- */
-        .whatsapp-section {
+        .comment-section h2 {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            color: var(--dark-pink);
         }
 
-        .btn-whatsapp {
-            background-color: #25D366;
+        .form-group { margin-bottom: 15px; }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+        }
+
+        /* --- WHATSAPP & GUARANTEE --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
             color: white;
-            padding: 15px 30px;
+            padding: 15px 25px;
             border-radius: 50px;
-            text-decoration: none;
             font-weight: 600;
-            display: inline-flex;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             transition: transform 0.2s;
         }
 
-        .btn-whatsapp:hover {
+        .whatsapp-float:hover {
             transform: scale(1.05);
         }
 
-        /* --- GUARANTEE --- */
         .guarantee {
             text-align: center;
+            margin-bottom: 40px;
             padding: 20px;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            background: #f9f9f9;
+            border-radius: var(--radius);
         }
 
         /* --- FOOTER --- */
         footer {
             background: var(--dark-pink);
-            color: var(--white);
+            color: white;
             text-align: center;
             padding: 20px;
-            font-size: 0.9rem;
+            margin-top: 40px;
         }
 
-        /* --- RESPONSIVE ADJUSTMENTS --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .hero-image, .product-detail-img { width: 100%; }
-            .btn-3 { font-size: 1rem; }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .about-section { flex-direction: column; }
+            .price-card.featured { transform: scale(1); }
+            .pricing { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
 
+    <!-- TOP ALERT -->
+    <div class="top-alert">
+        🚚 PAGUE SOMENTE NA ENTREGA<br>
+        <span style="font-size: 0.85rem; font-weight: 400;">Você só paga quando o produto chegar na sua casa. Compra segura e sem risco.</span>
+    </div>
+
+    <!-- SOCIAL PROOF -->
+    <div class="social-proof">
+        🔥 MAIS DE 10.000 UNIDADES VENDIDAS NO BRASIL
+    </div>
+
     <!-- HEADER -->
-    <header>
-        <div class="container">
-            <h1>AURORA PINK ✨</h1>
-            <p class="subtitle">Rejuvenate your skin and restore the natural beauty of your face.</p>
-        </div>
+    <header class="container">
+        <h1>AURORA PINK ✨</h1>
+        <p>Rejuvenesça sua pele e recupere a beleza natural do seu rosto</p>
     </header>
 
     <!-- HERO IMAGE -->
-    <div class="container">
-        <img src="IMG-20260210-WA0004.jpg" alt="Aurora Pink Product" class="hero-image">
-    </div>
+    <section class="container hero">
+        <img src="IMG-20260210-WA0004.jpg" alt="Aurora Pink Produto" class="hero-img">
+    </section>
 
     <!-- BENEFITS -->
-    <section class="benefits">
-        <div class="container">
+    <section class="container">
+        <div class="benefits">
+            <h2>Benefícios Exclusivos</h2>
             <div class="benefits-grid">
-                <div class="benefit-card">
+                <div class="benefit-item">
                     <span class="benefit-icon">✨</span>
-                    <div class="benefit-title">Reduces wrinkles</div>
-                    <p style="font-size: 0.9rem; color: #666;">And expression lines effectively.</p>
+                    <span>Reduz rugas e linhas de expressão</span>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-item">
                     <span class="benefit-icon">💧</span>
-                    <div class="benefit-title">Deep Hydration</div>
-                    <p style="font-size: 0.9rem; color: #666;">Intense moisture for healthy skin.</p>
+                    <span>Hidratação profunda</span>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-item">
                     <span class="benefit-icon">🌸</span>
-                    <div class="benefit-title">Firmer Skin</div>
-                    <p style="font-size: 0.9rem; color: #666;">Look younger and more radiant.</p>
+                    <span>Pele mais firme e jovem</span>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-item">
                     <span class="benefit-icon">⚡</span>
-                    <div class="benefit-title">Quick Results</div>
-                    <p style="font-size: 0.9rem; color: #666;">Visible changes in just days.</p>
+                    <span>Resultado visível rapidamente</span>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-item">
                     <span class="benefit-icon">🔥</span>
-                    <div class="benefit-title">Modern Formula</div>
-                    <p style="font-size: 0.9rem; color: #666;">Advanced rejuvenation technology.</p>
+                    <span>Fórmula moderna de rejuvenescimento</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about">
-        <div class="container">
-            <h2 style="color: var(--dark-pink); margin-bottom: 20px;">About Aurora Pink</h2>
-            <p>Aurora Pink is a facial cream designed to deeply hydrate the skin and help reduce signs of aging such as wrinkles and expression lines. Its modern formula helps improve skin firmness, leaving the face looking younger, smoother and more radiant.</p>
+    <!-- ABOUT PRODUCT -->
+    <section class="container">
+        <div class="about-section">
+            <div class="about-text">
+                <h2>Sobre o Aurora Pink</h2>
+                <p>Aurora Pink é um creme facial desenvolvido para hidratar profundamente a pele e ajudar a reduzir sinais de envelhecimento como rugas e linhas de expressão. Sua fórmula moderna ajuda a melhorar a firmeza da pele deixando o rosto mais jovem e radiante.</p>
+            </div>
+            <div class="about-img">
+                <img src="IMG-20260211-WA0000(2).jpg" alt="Aplicação do Creme Aurora Pink">
+            </div>
         </div>
     </section>
-
-    <!-- SECOND IMAGE -->
-    <div class="container">
-        <img src="IMG-20260211-WA0000(2).jpg" alt="Aurora Pink Texture" class="product-detail-img">
-    </div>
 
     <!-- PROMOTION -->
-    <div class="container">
+    <section class="container">
         <div class="promotion">
-            <h3>🔥 SPECIAL PROMOTION TODAY</h3>
-            <div class="promo-details">
-                <p>📦 Shipping across Brazil</p>
-                <p>⏳ Limited stock available</p>
-            </div>
+            <h3>🔥 PROMOÇÃO ESPECIAL DE HOJE</h3>
+            <p>📦 Envio para todo Brasil | ⏳ Estoque limitado</p>
         </div>
-    </div>
+    </section>
 
-    <!-- PRICING BUTTONS -->
-    <section class="pricing-section">
-        <div class="container">
-            <div class="btn-container">
-                <a href="https://app.coinzz.com.br/checkout/1-unidade-olgoz-0" class="btn btn-1">
-                    1 UNIT — R$169,99
-                </a>
-                <a href="https://app.coinzz.com.br/checkout/2-unidade-eu3vl-0" class="btn btn-2">
-                    2 UNITS — R$219,99
-                </a>
-                <a href="https://app.coinzz.com.br/checkout/3-unidade-jtg6u-0" class="btn btn-3">
-                    🔥 3 UNITS — R$277,00 (BEST SELLER)
-                </a>
-            </div>
+    <!-- PRICING -->
+    <section class="container pricing">
+        <!-- 1 Unit -->
+        <div class="price-card">
+            <h3>1 UNIDADE</h3>
+            <div class="price">R$169,99</div>
+            <a href="https://app.coinzz.com.br/checkout/1-unidade-olgoz-0" class="btn">COMPRAR AGORA</a>
+        </div>
+
+        <!-- 2 Units -->
+        <div class="price-card">
+            <h3>2 UNIDADES</h3>
+            <div class="price">R$219,99</div>
+            <a href="https://app.coinzz.com.br/checkout/2-unidade-eu3vl-0" class="btn">COMPRAR AGORA</a>
+        </div>
+
+        <!-- 3 Units (Featured) -->
+        <div class="price-card featured">
+            <div class="badge">Mais Vendido</div>
+            <h3>3 UNIDADES</h3>
+            <div class="price">R$277,00</div>
+            <a href="https://app.coinzz.com.br/checkout/3-unidade-jtg6u-0" class="btn">COMPRAR AGORA</a>
         </div>
     </section>
 
     <!-- REVIEWS -->
-    <section class="reviews">
-        <div class="container">
-            <h2>⭐ Customer Reviews</h2>
-            
+    <section class="container reviews">
+        <h2>⭐ Avaliações de clientes</h2>
+        <div class="reviews-grid">
             <div class="review-card">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <p class="review-text">"My skin became much more hydrated in just a few days!"</p>
-            </div>
-
-            <div class="review-card">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <p class="review-text">"Amazing product, light texture and fast results."</p>
-            </div>
-
-            <div class="review-card">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <p class="review-text">"The best facial cream I have ever used."</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHATSAPP -->
-    <section class="whatsapp-section">
-        <div class="container">
-            <a href="https://wa.me/5522992286480" class="btn-whatsapp">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.472 14.382C17.112 14.192 15.332 13.322 15.002 13.202C14.672 13.082 14.412 13.022 14.152 13.382C13.892 13.742 13.152 14.562 12.912 14.842C12.672 15.122 12.432 15.152 12.072 14.972C11.712 14.792 10.652 14.432 9.352 13.292C8.332 12.392 7.642 11.242 7.392 10.802C7.142 10.362 7.372 10.122 7.552 9.942C7.712 9.782 7.902 9.532 8.082 9.322C8.262 9.112 8.322 8.952 8.442 8.692C8.562
+                <div class="
