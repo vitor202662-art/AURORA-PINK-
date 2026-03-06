@@ -1,233 +1,423 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Pink - Rejuvenate Your Skin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary-pink: #ff8fa3;
+            --dark-pink: #c9184a;
+            --light-pink: #fff0f3;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --shadow: 0 10px 30px rgba(255, 143, 163, 0.2);
+            --radius: 20px;
+        }
 
-<title>Aurora Pink</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-pink);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-body{
-background:#ffe6f0;
-color:#333;
-}
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-header{
-background:linear-gradient(90deg,#ff2e88,#ff5ca8);
-color:white;
-text-align:center;
-padding:30px;
-font-size:30px;
-font-weight:bold;
-}
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, #fff 0%, var(--light-pink) 100%);
+        }
 
-.container{
-max-width:700px;
-margin:auto;
-padding:20px;
-}
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
 
-.produto{
-background:white;
-border-radius:15px;
-padding:25px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-.produto img{
-width:100%;
-border-radius:10px;
-margin-bottom:20px;
-}
+        /* --- HERO IMAGE --- */
+        .hero-image {
+            margin: 30px auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 4px solid var(--white);
+            transition: transform 0.3s ease;
+        }
 
-.titulo{
-font-size:28px;
-color:#ff2e88;
-margin-bottom:10px;
-text-align:center;
-}
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
 
-.sub{
-text-align:center;
-font-size:18px;
-margin-bottom:20px;
-}
+        /* --- BENEFITS --- */
+        .benefits {
+            padding: 40px 0;
+        }
 
-.beneficios{
-margin:25px 0;
-font-size:18px;
-line-height:32px;
-}
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-.beneficios div{
-margin-bottom:8px;
-}
+        .benefit-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-.oferta{
-background:#fff3f8;
-padding:20px;
-border-radius:10px;
-text-align:center;
-margin:25px 0;
-font-weight:bold;
-}
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
 
-.botao{
-display:block;
-background:#ff2e88;
-color:white;
-padding:18px;
-margin:12px 0;
-border-radius:10px;
-text-decoration:none;
-font-size:20px;
-font-weight:bold;
-text-align:center;
-transition:0.3s;
-}
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
 
-.botao:hover{
-background:#e60073;
-transform:scale(1.03);
-}
+        .benefit-title {
+            font-weight: 600;
+            color: var(--dark-pink);
+        }
 
-.whatsapp{
-background:#25d366;
-}
+        /* --- ABOUT --- */
+        .about {
+            background: var(--white);
+            padding: 50px 20px;
+            margin: 30px 0;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
 
-.avaliacoes{
-margin-top:30px;
-background:#fafafa;
-padding:20px;
-border-radius:10px;
-}
+        .about p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-.avaliacoes h3{
-text-align:center;
-margin-bottom:15px;
-}
+        .product-detail-img {
+            margin: 30px auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 4px solid var(--white);
+        }
 
-.avaliacao{
-margin-bottom:15px;
-}
+        /* --- PROMOTION --- */
+        .promotion {
+            background: linear-gradient(135deg, var(--dark-pink), var(--primary-pink));
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin: 40px 0;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 20px rgba(201, 24, 74, 0.3);
+        }
 
-.garantia{
-text-align:center;
-margin-top:20px;
-font-size:14px;
-color:#666;
-}
+        .promotion h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-footer{
-text-align:center;
-margin-top:30px;
-font-size:12px;
-color:#888;
-}
+        .promo-details {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
 
-</style>
+        /* --- PRICING BUTTONS --- */
+        .pricing-section {
+            padding: 20px 0 60px;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-1 {
+            background-color: var(--white);
+            color: var(--dark-pink);
+            border: 2px solid var(--primary-pink);
+        }
+
+        .btn-2 {
+            background-color: var(--white);
+            color: var(--dark-pink);
+            border: 2px solid var(--primary-pink);
+        }
+
+        .btn-3 {
+            background: linear-gradient(90deg, var(--dark-pink), var(--primary-pink));
+            color: var(--white);
+            border: none;
+            font-size: 1.2rem;
+            transform: scale(1.02);
+        }
+
+        .btn-3::after {
+            content: '🔥';
+            margin-left: 10px;
+        }
+
+        /* --- REVIEWS --- */
+        .reviews {
+            padding: 40px 20px;
+            background: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+        }
+
+        .reviews h2 {
+            text-align: center;
+            color: var(--dark-pink);
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background: var(--light-pink);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--dark-pink);
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* --- WHATSAPP --- */
+        .whatsapp-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- GUARANTEE --- */
+        .guarantee {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark-pink);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .hero-image, .product-detail-img { width: 100%; }
+            .btn-3 { font-size: 1rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-AURORA PINK ✨
-</header>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <h1>AURORA PINK ✨</h1>
+            <p class="subtitle">Rejuvenate your skin and restore the natural beauty of your face.</p>
+        </div>
+    </header>
 
-<div class="container">
+    <!-- HERO IMAGE -->
+    <div class="container">
+        <img src="IMG-20260210-WA0004.jpg" alt="Aurora Pink Product" class="hero-image">
+    </div>
 
-<div class="produto">
+    <!-- BENEFITS -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">✨</span>
+                    <div class="benefit-title">Reduces wrinkles</div>
+                    <p style="font-size: 0.9rem; color: #666;">And expression lines effectively.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">💧</span>
+                    <div class="benefit-title">Deep Hydration</div>
+                    <p style="font-size: 0.9rem; color: #666;">Intense moisture for healthy skin.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🌸</span>
+                    <div class="benefit-title">Firmer Skin</div>
+                    <p style="font-size: 0.9rem; color: #666;">Look younger and more radiant.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">⚡</span>
+                    <div class="benefit-title">Quick Results</div>
+                    <p style="font-size: 0.9rem; color: #666;">Visible changes in just days.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🔥</span>
+                    <div class="benefit-title">Modern Formula</div>
+                    <p style="font-size: 0.9rem; color: #666;">Advanced rejuvenation technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<img src="IMG-20260210-WA0004.jpg">
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="container">
+            <h2 style="color: var(--dark-pink); margin-bottom: 20px;">About Aurora Pink</h2>
+            <p>Aurora Pink is a facial cream designed to deeply hydrate the skin and help reduce signs of aging such as wrinkles and expression lines. Its modern formula helps improve skin firmness, leaving the face looking younger, smoother and more radiant.</p>
+        </div>
+    </section>
 
-<div class="titulo">
-Creme Facial Aurora Pink
-</div>
+    <!-- SECOND IMAGE -->
+    <div class="container">
+        <img src="IMG-20260211-WA0000(2).jpg" alt="Aurora Pink Texture" class="product-detail-img">
+    </div>
 
-<div class="sub">
-Rejuvenesça sua pele e recupere a beleza natural do seu rosto
-</div>
+    <!-- PROMOTION -->
+    <div class="container">
+        <div class="promotion">
+            <h3>🔥 SPECIAL PROMOTION TODAY</h3>
+            <div class="promo-details">
+                <p>📦 Shipping across Brazil</p>
+                <p>⏳ Limited stock available</p>
+            </div>
+        </div>
+    </div>
 
-<div class="beneficios">
+    <!-- PRICING BUTTONS -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="btn-container">
+                <a href="https://app.coinzz.com.br/checkout/1-unidade-olgoz-0" class="btn btn-1">
+                    1 UNIT — R$169,99
+                </a>
+                <a href="https://app.coinzz.com.br/checkout/2-unidade-eu3vl-0" class="btn btn-2">
+                    2 UNITS — R$219,99
+                </a>
+                <a href="https://app.coinzz.com.br/checkout/3-unidade-jtg6u-0" class="btn btn-3">
+                    🔥 3 UNITS — R$277,00 (BEST SELLER)
+                </a>
+            </div>
+        </div>
+    </section>
 
-<div>✨ Reduz rugas e linhas de expressão</div>
-<div>💧 Hidratação profunda</div>
-<div>🌸 Pele mais firme e jovem</div>
-<div>⚡ Resultado visível rapidamente</div>
-<div>🔥 Fórmula moderna de rejuvenescimento</div>
+    <!-- REVIEWS -->
+    <section class="reviews">
+        <div class="container">
+            <h2>⭐ Customer Reviews</h2>
+            
+            <div class="review-card">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <p class="review-text">"My skin became much more hydrated in just a few days!"</p>
+            </div>
 
-</div>
+            <div class="review-card">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <p class="review-text">"Amazing product, light texture and fast results."</p>
+            </div>
 
-<img src="IMG-20260211-WA0000(2).jpg">
+            <div class="review-card">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <p class="review-text">"The best facial cream I have ever used."</p>
+            </div>
+        </div>
+    </section>
 
-<div class="oferta">
-
-🔥 PROMOÇÃO ESPECIAL DE HOJE  
-<br>📦 Envio para todo Brasil  
-<br>⏳ Estoque limitado
-
-</div>
-
-<a class="botao" href="https://app.coinzz.com.br/checkout/1-unidade-olgoz-0">
-1 UNIDADE — R$169,99
-</a>
-
-<a class="botao" href="https://app.coinzz.com.br/checkout/2-unidade-eu3vl-0">
-2 UNIDADES — R$219,99
-</a>
-
-<a class="botao" href="https://app.coinzz.com.br/checkout/3-unidade-jtg6u-0">
-🔥 3 UNIDADES — R$277,00 (MAIS VENDIDO)
-</a>
-
-<div class="avaliacoes">
-
-<h3>⭐ Avaliações de clientes</h3>
-
-<div class="avaliacao">
-⭐⭐⭐⭐⭐  
-"Minha pele ficou muito mais hidratada em poucos dias!"
-</div>
-
-<div class="avaliacao">
-⭐⭐⭐⭐⭐  
-"Produto incrível, textura leve e resultado rápido."
-</div>
-
-<div class="avaliacao">
-⭐⭐⭐⭐⭐  
-"Melhor creme facial que já usei."
-</div>
-
-</div>
-
-<h3 style="text-align:center;margin-top:25px;">
-Dúvidas?
-</h3>
-
-<a class="botao whatsapp" href="https://wa.me/5522992286480">
-Falar no WhatsApp
-</a>
-
-<div class="garantia">
-🔒 Compra 100% segura
-</div>
-
-</div>
-
-<footer>
-© Aurora Pink
-</footer>
-
-</div>
-
-</body>
-</html>
+    <!-- WHATSAPP -->
+    <section class="whatsapp-section">
+        <div class="container">
+            <a href="https://wa.me/5522992286480" class="btn-whatsapp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382C17.112 14.192 15.332 13.322 15.002 13.202C14.672 13.082 14.412 13.022 14.152 13.382C13.892 13.742 13.152 14.562 12.912 14.842C12.672 15.122 12.432 15.152 12.072 14.972C11.712 14.792 10.652 14.432 9.352 13.292C8.332 12.392 7.642 11.242 7.392 10.802C7.142 10.362 7.372 10.122 7.552 9.942C7.712 9.782 7.902 9.532 8.082 9.322C8.262 9.112 8.322 8.952 8.442 8.692C8.562
