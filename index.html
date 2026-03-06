@@ -4,61 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aurora Pink - Creme Facial</title>
+<title>Aurora Pink</title>
 
 <style>
 
-body{
-font-family: Arial;
-background:#ffe6f0;
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#ffe6f0;
+color:#333;
 text-align:center;
 }
 
 header{
-background:#ff2e88;
+background:linear-gradient(90deg,#ff2e88,#ff5ca8);
+padding:35px;
 color:white;
-padding:30px;
-font-size:30px;
+font-size:32px;
 font-weight:bold;
+letter-spacing:2px;
 }
 
 .container{
+max-width:600px;
+margin:auto;
 padding:20px;
 }
 
 .produto{
 background:white;
+border-radius:15px;
 padding:25px;
-border-radius:12px;
-max-width:520px;
-margin:auto;
-box-shadow:0px 0px 15px rgba(0,0,0,0.15);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.produto img{
+width:100%;
+border-radius:10px;
+margin-bottom:20px;
 }
 
 h2{
 color:#ff2e88;
+margin-bottom:15px;
 }
 
-.preco{
-font-size:26px;
+.beneficios{
+text-align:left;
+margin:20px 0;
+font-size:18px;
+line-height:30px;
+}
+
+.promocao{
+background:#fff3f8;
+padding:18px;
+border-radius:10px;
 font-weight:bold;
-margin:10px;
+margin:20px 0;
 }
 
 .botao{
 display:block;
 background:#ff2e88;
 color:white;
-padding:15px;
-margin:12px;
+padding:16px;
+margin:12px 0;
+border-radius:10px;
 text-decoration:none;
-border-radius:8px;
+font-size:20px;
 font-weight:bold;
-font-size:18px;
+transition:0.3s;
 }
 
 .botao:hover{
+transform:scale(1.05);
 background:#e60073;
 }
 
@@ -66,25 +91,27 @@ background:#e60073;
 background:#25d366;
 }
 
-.bonus{
-background:#fff3f8;
-padding:15px;
-border-radius:10px;
-margin-top:20px;
-font-size:18px;
-}
-
-.depoimentos{
+.avaliacoes{
 margin-top:25px;
 background:#fafafa;
-padding:15px;
+padding:20px;
 border-radius:10px;
 }
 
-.garantia{
+.avaliacoes p{
+margin-top:10px;
+}
+
+.seguro{
 margin-top:20px;
 font-size:14px;
-color:#666;
+color:#777;
+}
+
+footer{
+margin-top:30px;
+font-size:12px;
+color:#888;
 }
 
 </style>
@@ -100,20 +127,26 @@ AURORA PINK ✨
 
 <div class="produto">
 
+<img src="https://i.imgur.com/7yUvePI.png">
+
 <h2>Creme Facial Aurora Pink</h2>
 
-<p>
-✨ Rejuvenesça sua pele e reduza rugas em poucos dias.
-<br><br>
-💖 Hidratação profunda<br>
-🔥 Pele mais jovem<br>
-🌟 Resultado visível rapidamente
-</p>
+<div class="beneficios">
 
-<div class="bonus">
-🔥 PROMOÇÃO ESPECIAL DE HOJE<br>
-📦 Envio para todo Brasil<br>
-⏳ Estoque limitado
+✨ Rejuvenesce a pele  
+<br>💧 Hidratação profunda  
+<br>🔥 Reduz linhas e rugas  
+<br>🌸 Pele mais firme e jovem  
+<br>⚡ Resultado visível rapidamente  
+
+</div>
+
+<div class="promocao">
+
+🔥 PROMOÇÃO ESPECIAL DE HOJE  
+<br>📦 Envio para todo Brasil  
+<br>⏳ Estoque limitado
+
 </div>
 
 <h2>Escolha sua oferta</h2>
@@ -130,7 +163,7 @@ AURORA PINK ✨
 🔥 3 UNIDADES — R$277,00 (MAIS VENDIDO)
 </a>
 
-<div class="depoimentos">
+<div class="avaliacoes">
 
 <h3>⭐ Avaliações de clientes</h3>
 
@@ -139,6 +172,9 @@ AURORA PINK ✨
 
 <p>⭐⭐⭐⭐⭐  
 "Produto incrível, recomendo!"</p>
+
+<p>⭐⭐⭐⭐⭐  
+"Resultado em poucos dias."</p>
 
 </div>
 
@@ -150,11 +186,15 @@ Falar no WhatsApp
 
 <p>Atendimento direto com suporte.</p>
 
-<div class="garantia">
+<div class="seguro">
 🔒 Compra 100% segura
 </div>
 
 </div>
+
+<footer>
+© Aurora Pink
+</footer>
 
 </div>
 
